@@ -1,0 +1,100 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+        <span *ngIf="currentPopulation.Population; else elseBlock">{{
+          originalTitle
+        }}</span>
+        <ng-template #elseBlock>Create Population Data</ng-template>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form
+    [formGroup]="form"
+    #formDirective="ngForm"
+    (ngSubmit)="save(formDirective)"
+  >
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+        <mat-label>ID Nation</mat-label>
+        <input
+          matInput
+          placeholder="ID Nation"
+          formControlName="ID Nation"
+          type="text"
+          name="ID Nation"
+        />
+      </mat-form-field>
+
+      
+
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label>Nation</mat-label>
+          <input
+            matInput
+            placeholder="Nation"
+            formControlName="Nation"
+            type="text"
+            name="Nation"
+          />
+        </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+        <mat-label>ID Year</mat-label>
+        <input
+          matInput
+          placeholder="ID Year"
+          formControlName="ID Year"
+          type="text"
+          name="ID Year"
+        />
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+        <mat-label>Year</mat-label>
+        <input
+          matInput
+          placeholder="Year"
+          formControlName="Year"
+          type="text"
+          name="Year"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+        <mat-label>Population</mat-label>
+        <input
+          matInput
+          placeholder="Population"
+          formControlName="Population"
+          type="text"
+          name="Population"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+        <mat-label>Slug Nation</mat-label>
+        <input
+          matInput
+          placeholder="Slug Nation"
+          formControlName="Slug Nation"
+          type="text"
+          name="Slug Nation"
+        />
+      </mat-form-field>
+
+
+      <section class="full-width">
+      </section>
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button color="primary">
+        {{ originalTitle ? 'Save' : 'Create' }}
+      </button>
+      <button type="button" mat-button (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

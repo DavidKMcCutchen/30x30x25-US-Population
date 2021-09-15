@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@us-population/api-interfaces';
+
 
 @Component({
   selector: 'us-population-root',
@@ -8,6 +7,9 @@ import { Message } from '@us-population/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  title= 'Population Data';
+  links= [
+    {path: '', icon: 'home', title: 'Home'},
+    {path: 'api/data?drilldowns=Nation&measures=Population', icon: 'view_list', title: 'Population'}
+  ]
 }

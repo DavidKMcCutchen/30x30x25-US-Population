@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Current and Past US Population Data</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let data of datas" data-test="population-list-item" (click)="selected.emit(data)">
+        <h3 matLine>{{data.Nation}}</h3>
+        <p matLine> Year: {{data.Year}}</p>
+        <p matLine> Population: {{data.Population}}</p>
+        
+        <button mat-icon-button (click)="populationViewed.emit(data.Population); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">chevron_left</mat-icon>
+        </button>
+
+
+        <button mat-icon-button (click)="deleted.emit(data); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

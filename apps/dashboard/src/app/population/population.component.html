@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-50" layout="row" layout-align="center center">
+      <us-population-population-list
+        [datas]="allPopulations$ | async"
+        (selected)="selectPopulation($event)"
+        (deleted)="deletePopulation($event)"
+        (populationViewed)="viewPopulation($event)"
+      ></us-population-population-list>
+    </div>
+    <div class="col-50" layout="row" layout-align="center center">
+      <us-population-population-details
+        [data]="selectedPopulation$ | async"
+        (saved)="savePopulation($event)"
+        (cancelled)="resetPopulation()"
+        [form]="form"
+      ></us-population-population-details>
+    </div>
+  </div>

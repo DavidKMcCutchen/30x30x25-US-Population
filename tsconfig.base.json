@@ -13,9 +13,17 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
-      "@us-population/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@us-population/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@us-population/core-data": ["libs/core-data/src/index.ts"],
+      "@us-population/core-state": ["libs/core-state/src/index.ts"],
+      "@us-population/environment": ["libs/environment/src/index.ts"],
+      "@us-population/material": ["libs/material/src/index.ts"],
+      "@us-population/theme": ["libs/theme/src/index.ts"],
+      "@us-population/ui-login": ["libs/ui-login/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
